@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lso360seoplugin.com/sitemap.xml

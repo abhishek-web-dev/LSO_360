@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | LSO 360 Auto SEO Plugin</title>
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR (injected by components.js) -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- HERO SECTION -->
+  <div class="page-hero" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content" style="margin: 0 auto; padding-top: 40px; display: flex; flex-direction: column; align-items: center;">
+      <div style="font-size: 5rem; margin-bottom: 20px; line-height: 1;" class="wow animate__animated animate__zoomIn">🎉</div>
+      <h1 class="wow animate__animated animate__fadeInUp" data-wow-duration=".8s" data-wow-delay=".1s">Thank You!</h1>
+      <p class="wow animate__animated animate__fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; line-height: 1.8;">
+        Your message has been successfully sent. Our team will get back to you shortly. In the meantime, feel free to explore more about what we do.
+      </p>
+      <div class="wow animate__animated animate__fadeInUp" data-wow-duration=".8s" data-wow-delay=".3s" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-grad">Back to Home</a>
+        <a href="services.html" class="btn btn-ghost">Explore Services</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEXT STEPS SECTION -->
+  <!--<section class="bg-light">-->
+  <!--  <div style="max-width:1160px;margin:0 auto">-->
+  <!--    <div class="section-header">-->
+  <!--      <h6 class="wow animate__animated animate__fadeInUp section-tag" data-wow-duration=".7s">What Happens Next?</h6>-->
+  <!--      <h2 class="wow animate__animated animate__fadeInUp" data-wow-duration=".8s" data-wow-delay=".1s">Our Process</h2>-->
+  <!--    </div>-->
+  <!--    <div class="proc-row">-->
+  <!--      <div class="proc-step wow animate__animated animate__fadeInUp" data-wow-duration=".7s" data-wow-delay=".05s">-->
+  <!--        <div class="proc-num">1</div>-->
+  <!--        <h4>Review</h4>-->
+  <!--        <p>Our team will carefully review the details you provided.</p>-->
+  <!--      </div>-->
+  <!--      <div class="proc-step wow animate__animated animate__fadeInUp" data-wow-duration=".7s" data-wow-delay=".15s">-->
+  <!--        <div class="proc-num">2</div>-->
+  <!--        <h4>Analyze</h4>-->
+  <!--        <p>We'll analyze your requirements to find the best SEO strategy.</p>-->
+  <!--      </div>-->
+  <!--      <div class="proc-step wow animate__animated animate__fadeInUp" data-wow-duration=".7s" data-wow-delay=".25s">-->
+  <!--        <div class="proc-num">3</div>-->
+  <!--        <h4>Connect</h4>-->
+  <!--        <p>An expert will contact you to discuss your tailored solution.</p>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</section>-->
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- WOW.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  
+  <!-- FOOTER (injected by components.js) -->
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Custom script for Thank You page confetti -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var duration = 3 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        function randomInRange(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        var interval = setInterval(function() {
+          var timeLeft = animationEnd - Date.now();
+
+          if (timeLeft <= 0) {
+            return clearInterval(interval);
+          }
+
+          var particleCount = 50 * (timeLeft / duration);
+          // since particles fall down, start a bit higher than random
+          confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+          confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+        }, 250);
+      }, 500);
+    });
+  </script>
+</body>
+
+</html>
